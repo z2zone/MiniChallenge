@@ -5,15 +5,13 @@ import { createStore } from 'redux';
 
 import App from './components/App';
 import reducers from './reducers';
-import throttle from 'lodash/throttle';
-import { loadState, saveState } from './localStorage';
 import './style/style.css';
 
 function saveToLocalStorage(state) {
 	try {
 		const serializedState = JSON.stringify(state);
 		localStorage.setItem('state', serializedState);
-	} catch (e) {
+	} catch(e) {
 		console.log(e);
 	}
 }
